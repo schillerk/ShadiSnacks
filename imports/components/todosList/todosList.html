@@ -1,0 +1,20 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+
+<header>
+  <h1>Shadi Snacks</h1>
+
+  <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
+    <input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Request a snack"/>
+  </form>
+
+</header>
+
+<ul>
+  <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
+    <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button>
+    <span class="text">
+    	<strong>{{task.username}}</strong> - {{task.text}}
+    </span>
+  </li>
+</ul>
